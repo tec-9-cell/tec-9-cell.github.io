@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Harry Potter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Barra de navegación -->
+        <div class="nav">
+            <button onclick="showSection('houses')">Casas</button>
+            <button onclick="showSection('wand')">Varita</button>
+            <button onclick="showSection('quiz')">Juego</button>
+        </div>
+
+        <!-- Sección de Casas -->
+        <div id="houses" class="section">
+            <h1>Casas de Hogwarts</h1>
+            <p>Descubre a cuál casa perteneces según tus respuestas.</p>
+            <p id="house">Casa: -</p>
+        </div>
+
+        <!-- Sección de Varita -->
+        <div id="wand" class="section hidden">
+            <h1>La Varita</h1>
+            <p>Encuentra tu varita ideal según tus características.</p>
+            <p>Haz clic en el botón de varita para descubrir más.</p>
+            <!-- Aquí puedes incluir una imagen de una varita o añadir más detalles -->
+        </div>
+
+        <!-- Sección de Juego -->
+        <div id="quiz" class="section hidden">
+            <div class="settings">
+                <label for="difficulty">Dificultad:</label>
+                <select id="difficulty">
+                    <option value="easy">Fácil</option>
+                    <option value="medium">Medio</option>
+                    <option value="hard">Difícil</option>
+                </select>
+                <button onclick="startGame()">Iniciar Juego</button>
+            </div>
+            <div id="timer">Tiempo: 30</div>
+            <div id="score">Puntaje: 0</div>
+            <div id="high-score">Puntaje Máximo: 0</div>
+            <div id="question-container">
+                <p id="question">Pregunta</p>
+                <div id="answers"></div>
+            </div>
+            <div class="ranking">
+                <h2>Ranking</h2>
+                <input type="text" id="player-name" placeholder="Tu nombre">
+                <button onclick="saveScore()">Guardar Puntaje</button>
+                <ol id="ranking-list"></ol>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
